@@ -15,18 +15,18 @@ end
     'SCHNL0792' => 'DriverID valid',
     'WIZAJ0805' => 'DriverID valid',
     'WARDX0482' => 'DriverID valid',
-    '2024-02-13' => 'DriverID invalid',
-    '' => 'DriverID invalid',
     'SCHUL0567' => 'DriverID valid',
     'ZIEMX0264' => 'DriverID valid',
     'MCGLC0375' => 'DriverID valid',
+    '2024-02-13' => 'DriverID invalid',
     'HOWE21083' => 'DriverID invalid',
     '?!2345678' => 'DriverID invalid',
     '2024C1152' => 'DriverID invalid',
     'YOST21068' => 'DriverID invalid',
     'MAYER504229MV4VN' => 'DriverID invalid',
     'HERMC' => 'DriverID invalid',
-    '""' => 'DriverID invalid'
+    '""' => 'DriverID invalid',
+    '' => 'DriverID invalid',
   }
 
   tests.each_pair do |key, value|
