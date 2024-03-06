@@ -24,47 +24,47 @@ invalid_drivers = []
     # Validate the row of data
     errors = Driver.validated(row)
     if errors.empty?
-      # If there are no errors, produce a valid vehicle
+      # If there are no errors, produce a valid driver
       valid_driver = Driver.new(last_name: last_name, first_name: first_name, date_of_birth: date_of_birth, driver_id: driver_id, entitlements: entitlements)
-      # Add the valid vehicle to the valid_vehicles array
+      # Add the valid driver to the valid_drivers array
       valid_drivers << valid_driver.details
     else
-      # If there are errors, produce an invalid vehicle
+      # If there are errors, produce an invalid driver
       invalid_driver = Driver.new(last_name: last_name, first_name: first_name, date_of_birth: date_of_birth, driver_id: driver_id, entitlements: entitlements, errors: errors)
-      # Add the invalid vehicle to the invalid_vehicles array
+      # Add the invalid driver to the invalid_drivers array
       invalid_drivers << invalid_driver.details
     end
   end
   write_to_file(valid_drivers: valid_drivers)
   write_invalid_drivers_to_file(invalid_drivers: invalid_drivers)
-  puts "All vehicles have been validated"
+  puts "All drivers have been validated"
 end
 
 def write_to_file(valid_drivers:)
-# Read the valid_vehicles.json file
+# Read the valid_drivers.json file
   file = File.read('valid_drivers.json')
   array = JSON.parse(file)
   array["valid_drivers"] = []
-# Add each valid_vehicle to the array
+# Add each valid_driver to the array
   valid_drivers.each do |driver|
     array["valid_drivers"] << driver
   end
-# Open the valid_vehicles.json file ready for writing
+# Open the valid_drivers.json file ready for writing
   File.open("valid_drivers.json", "w") do |f|
     f.write(JSON.pretty_generate(array))
   end
 end
 
 def write_invalid_drivers_to_file(invalid_drivers:)
-  # Read the invalid_vehicles.json file
+  # Read the invalid_drivers.json file
   file = File.read('invalid_drivers.json')
   array = JSON.parse(file)
   array["invalid_drivers"] = []
-# Add each invalid_vehicle to the array
+# Add each invalid_driver to the array
   invalid_drivers.each do |driver|
     array["invalid_drivers"] << driver
   end
-  # Open the invalid_vehicles.json file ready for writing
+  # Open the invalid_drivers.json file ready for writing
   File.open("invalid_drivers.json", "w") do |f|
     f.write(JSON.pretty_generate(array))
   end
