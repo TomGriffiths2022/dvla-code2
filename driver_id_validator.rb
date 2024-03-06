@@ -17,7 +17,7 @@ module DriverIdValidator
     if driver_id.empty?
       false # driver_id is required so if it's empty then the validation is false
     else
-      driver_id.match?(/^[A-Z]{4}(?:X|[A-Z])(0[1-9]|1[0-2]){1}\d{2}$/) # returns true if the driver_id is valid
+      driver_id.match?(/^[A-Za-z]{4}(?:[Xx]|[A-Za-z])(0[1-9]|1[0-2]){1}\d{2}$/) # returns true if the driver_id is valid
     end
   end
 end

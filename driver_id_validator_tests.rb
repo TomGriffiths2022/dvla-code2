@@ -13,8 +13,14 @@ end
 
   tests = { #batch of inputs against what is expected of the validation
     'SCHNL0792' => 'DriverID valid',
+    'schnl0792' => 'DriverID valid',
+    'SchnL0792' => 'DriverID valid',
+    'schnL0792' => 'DriverID valid',
     'WIZAJ0805' => 'DriverID valid',
     'WARDX0482' => 'DriverID valid',
+    'WardX0482' => 'DriverID valid',
+    'Wardx0482' => 'DriverID valid',
+    'wardx0482' => 'DriverID valid',
     'SCHUL0567' => 'DriverID valid',
     'ZIEMX0264' => 'DriverID valid',
     'MCGLC0375' => 'DriverID valid',
