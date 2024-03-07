@@ -29,6 +29,7 @@ end
     '?!2345678' => 'DriverID invalid',
     '2024C1152' => 'DriverID invalid',
     'YOST21068' => 'DriverID invalid',
+    '123456789' => 'DriverID invalid',
     'MAYER504229MV4VN' => 'DriverID invalid',
     'HERMC' => 'DriverID invalid',
     '""' => 'DriverID invalid',
